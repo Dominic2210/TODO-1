@@ -42,14 +42,15 @@
   padding-left: 10px;
   margin-bottom: 50px;
   background-color: #edeef0;
+  width: 100%;
 }
 #input-box {
-  /* width: 80%; */
-  flex: 1;
+  width: 80%;
+  /* flex: 1; */
   border: none;
   outline: none;
   padding: 10px 30px 10px 20px;
-  font-size: 25px;
+  font-size: clamp(12px, 25px, 30px);
   background: transparent;
   
 }
@@ -63,6 +64,10 @@
   cursor: pointer;
   transition: all .1s ease;
 }
+#add-btn i {
+  font-size: 24px;
+}
+
 #add-btn:hover {
   opacity: 0.7;
 }
@@ -99,17 +104,40 @@
   background: url(./images/checked.svg);
 }
 
-#list-container li::after {
-  content: "";
+li .img {
   position: absolute;
-  height: 18px;
-  width: 18px;
-  background: url(./images/trash-un.svg);
-  background-position: center;
   top: 12px;
   right: -5px;
+  width: 20px;
+  height: 20px;
+  background: url(./images/trash-un.svg);
+  background-position: center;
 }
-#list-container li.checked::after {
+li.checked .img {
   background: url(./images/trash-ch.svg);
   background-position: center;
+}
+
+@media screen and (max-width: 767px){
+  .row {
+    flex-direction: column;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  #input-box {
+    background-color: #edeef0;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  #add-btn {
+    padding: 16px 30px;
+  }
+}
+@media screen and (max-width: 400px) {
+  #add-btn {
+    border-radius: 50%;
+    padding: 15px 15px 10px;
+  }
 }
