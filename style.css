@@ -1,5 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgb(17, 16, 99), rgb(97, 36, 137));
+  padding: 10px;
+}
+
+.todo {
+  width: 100%;
+  max-width: 725px;
+  background: #fff;
+  border-radius: 10px;
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+}
+.todo h1 {
+  color: #002765;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.todo h1 img {
+  width: 45px;
+  margin-left: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 30px;
+  padding-left: 10px;
+  margin-bottom: 50px;
+  background-color: #edeef0;
+}
+#input-box {
+  /* width: 80%; */
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px 30px 10px 20px;
+  font-size: 25px;
+  background: transparent;
+  
+}
+#add-btn {
+  font-size: 20px;
+  padding: 16px 50px;
+  border-radius: 30px;
+  border: none;
+  color: #edeef0;
+  background: rgb(230, 98, 10);
+  cursor: pointer;
+  transition: all .1s ease;
+}
+#add-btn:hover {
+  opacity: 0.7;
+}
+#add-btn:active {
+  opacity: 1;
+}
+
+#list-container li {
+  list-style: none;
+  font-size: 20px;
+  padding: 12px 10px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+
+}
+#list-container li::before {
+  content: "";
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background: url(./images/unchecked.svg);
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: 8px;
+}
+#list-container li.checked {
+  color: #959595;
+  text-decoration: line-through;
+} 
+#list-container li.checked::before {
+  background: url(./images/checked.svg);
+}
+
+#list-container li::after {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  background: url(./images/trash-un.svg);
+  background-position: center;
+  top: 12px;
+  right: -5px;
+}
+#list-container li.checked::after {
+  background: url(./images/trash-ch.svg);
+  background-position: center;
 }
